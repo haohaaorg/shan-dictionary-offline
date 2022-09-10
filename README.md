@@ -60,8 +60,3 @@ npx electron-builder --linux
 ```
 npx electron-builder --win
 ```
-
----
-
-- [HaoHaa](https://github.com/haohaaorg)
-- [SIIT](https://shaniit.org)
