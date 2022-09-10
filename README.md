@@ -38,10 +38,15 @@ npm run dev
 
 ## Building App
 
-#### For Mac
+#### Build script
 
 ```
 npm run build
+```
+
+#### For Mac
+```
+npx electron-builder
 ```
 
 #### For Linux
