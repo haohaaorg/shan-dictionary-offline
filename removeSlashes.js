@@ -1,0 +1,5 @@
+const fs = require('fs')
+let indexData = fs.readFileSync('dist/index.html','utf-8')
+indexData = indexData.replace(/href=\"\//gm,'href="')
+indexData = indexData.replace(/src=\"\//gm,'src="')
+fs.writeFileSync('dist/index.html',indexData)

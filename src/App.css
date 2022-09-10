@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #007bff;
+  --dark-primary: #0f1527;
+  --dark-primary-hover: #040816;
+}
+
+.text-main {
+  background: var(--dark-primary);
+}
+
+.bg-main {
+  background: var(--dark-primary);
+}
+
+.bg-main-hover {
+  background: var(--dark-primary-hover);
+}
+
+.border-main {
+  border-color: var(--dark-primary);
+}
+
+@media(min-width:800px) {
+  .result-list li {
+    width: 473px;
+  }
+}
+
+@media(max-width:800px) {
+  .result-list {
+    width: 100%;
+  }
+}
+
+.dictionary-type-logo path{
+  fill:#444444;
+}
+
+.dark .dictionary-type-logo path{
+  fill:#ffffff !important;
+}
+
+@layer components {
+  .bg-primary {
+    @apply bg-main;
+  }
+
+  .bg-primary-hover {
+    @apply bg-main-hover;
+  }
+
+  .border-primary {
+    @apply border-main;
+  }
+}
+
+/* Book Loading Animation */
+@-webkit-keyframes whirl-book {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  50%,
+  80% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  90%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes whirl-book {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  50%,
+  80% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  90%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+
+.book {
+  height: 30px;
+  position: relative;
+  width: 30px;
+  -webkit-perspective: 60px;
+  perspective: 60px;
+}
+
+.book div {
+  -webkit-animation: whirl-book 2s infinite;
+  animation: whirl-book 2s infinite;
+  background: var(--primary);
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  width: 100%;
+}
+
+.dark .book div {
+  background: #72b8f2f9;
+}
+
+.book div:nth-child(1) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+.book div:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.book div:nth-child(3) {
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+
+.book div:nth-child(4) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.book div:nth-child(5) {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+
+/* Fade In Up animation */
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

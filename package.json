@@ -1,0 +1,109 @@
+{
+  "name": "shan-dictionary",
+  "description": "Shan Dictionary application",
+  "author": "Hao Haa <hello@haohaa.com>",
+  "license": "Apache-2.0",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haohaaorg/shan-dictionary-offline"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && node removeSlashes.js",
+    "serve": "vite preview --port 3000",
+    "lint": "eslint . --ext .ts,.tsx,.js",
+    "prepare": "husky install",
+    "test": "jest",
+    "start": "npx electron index.js",
+    "pack": "npx electron-builder --dir",
+    "publish": "npx electron-builder && npx electron-builder --linux && npx electron-builder --win portable &&npx electron-builder --win && --publish always",
+    "deploy": "npm run build && npm run publish"
+  },
+  "build": {
+    "productName": "Shan Dictionary",
+    "appId": "com.haohaa.dictionary",
+    "copyright": "Copyright © HaoHaa Organition",
+    "directories": {
+      "output": "export",
+      "buildResources": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icons/icon_256.ico",
+      "publish": [
+        "github"
+      ]
+    },
+    "mac": {
+      "icon": "icons/icon.png",
+      "publish": [
+        "github"
+      ]
+    },
+    "linux": {
+      "icon": "icons/icon.png",
+      "target": [
+        "deb",
+        "tar.gz"
+      ],
+      "category": "Education",
+      "publish": [
+        "github"
+      ]
+    },
+    "nsis": {
+      "license": "LICENSE",
+      "installerIcon": "icons/icon.ico",
+      "installerHeaderIcon": "icons/icon.ico",
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "*.js",
+      "*.json",
+      "*.svg",
+      "dist",
+      "node_modules"
+    ]
+  },
+  "homepage": ".",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dexie": "^3.2.2",
+    "electron-is-dev": "^2.0.0",
+    "electron-updater": "^5.0.5",
+    "notyf": "^3.10.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@heroicons/react": "^1.0.5",
+    "@tailwindcss/forms": "^0.4.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "16",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "@vitejs/plugin-react": "^1.1.3",
+    "autoprefixer": "10.4.5",
+    "electron": "^19.0.7",
+    "electron-builder": "^23.3.3",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-watch": "^8.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.7",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.6"
+  }
+}
