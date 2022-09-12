@@ -8,6 +8,14 @@ const path = require('path')
 const url = require('url')
 const { autoUpdater } = require("electron-updater");
 const isDev = require("electron-is-dev");
+// const log = require('electron-log');
+const { dialog } = require('electron')
+
+// Log
+// autoUpdater.logger = log;
+// autoUpdater.logger.transports.file.level = 'debug';
+// log.info('App starting...');
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -33,6 +41,23 @@ function createWindow() {
                 label: "SIIT",
                 click: function () {
                     shell.openExternal('https://shaniit.org')
+
+                }
+            },
+            {
+                label: "Check Update",
+                click: function () {
+                    const dialogOpts = {
+                        type: 'info',
+                        buttons: ['OK'],
+                        title: 'Check Version',
+                        message: 'Shan Dictionary',
+                        detail: 'Version - ' + app.getVersion()
+                    }
+                    dialog.showMessageBox(dialogOpts, (response) => {
+                    });
+
+                    autoUpdater.checkForUpdates();
 
                 }
             },
@@ -138,9 +163,9 @@ function createWindow() {
         win = null
     })
 
-    if (!isDev) {
-        autoUpdater.checkForUpdates();
-    };
+    // if (!isDev) {
+    //     autoUpdater.checkForUpdates();
+    // };
 }
 
 
@@ -170,7 +195,7 @@ app.on('activate', () => {
 autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
     const dialogOpts = {
         type: 'info',
-        buttons: ['Ok'],
+        buttons: ['OK'],
         title: 'Application Update',
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail: 'A new version is being downloaded.'
@@ -183,12 +208,13 @@ autoUpdater.on("update-available", (_event, releaseNotes, releaseName) => {
 autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) => {
     const dialogOpts = {
         type: 'info',
-        buttons: ['Restart', 'Later'],
+        buttons: ['Restart'],
         title: 'Application Update',
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail: 'A new version has been downloaded. Restart the application to apply the updates.'
     };
     dialog.showMessageBox(dialogOpts).then((returnValue) => {
-        if (returnValue.response === 0) autoUpdater.quitAndInstall()
+        // if (returnValue.response === 0) 
+        autoUpdater.quitAndInstall();
     })
 });
