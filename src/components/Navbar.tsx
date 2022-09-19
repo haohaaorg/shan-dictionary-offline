@@ -22,6 +22,18 @@ const Navbar = () => {
       newTab: false
     },
     {
+      label: 'Developers',
+      to: '/developers',
+      component: 'Link',
+      newTab: false
+    },
+    {
+      label: 'Q&A',
+      to: '/qna',
+      component: 'Link',
+      newTab: false
+    },
+    {
       label: 'Favorites',
       to: '/favorites',
       component: 'Link',
@@ -62,7 +74,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`nav-wrap fixed shadow w-screen z-20 top-0 left-0 dark:bg-primary ${
+        className={`nav-wrap fixed w-screen z-20 top-0 left-0 dark:bg-primary ${
           pathname !== '/' ? 'h-[18vh]' : 'h-[10vh]'
         }`}
       >

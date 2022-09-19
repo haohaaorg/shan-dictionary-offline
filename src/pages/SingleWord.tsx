@@ -9,13 +9,13 @@ import {
 } from '../helpers/db'
 import { decryptMe } from '../helpers/encryption'
 import { notyf } from '../helpers/notyf'
-import { WordDetail } from '../types'
-import Favorite from './Favorites'
+import { Favourite, WordDetail } from '../types'
 
 const SingleWord = () => {
   const { id, dicttype } = useParams()
   const { pathname } = useLocation()
 
+  const [ttsAvailable, setTTSAvailable] = useState<boolean>(false)
   const [noResult, setNoResult] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
   const [wordDetail, setWordDetail] = useState<WordDetail>({
@@ -26,11 +26,24 @@ const SingleWord = () => {
     definition: ''
   })
 
+  const checkIfTTSAvailable = (dicttype: string) => {
+    const TTSDict = [
+      'shn2eng',
+      'eng2shn',
+      'shn2shn',
+      'shn2bur',
+      'bur2shn',
+      'tha2shn',
+      'shn2pli'
+    ]
+    const isAvailable = TTSDict.includes(dicttype)
+    setTTSAvailable(isAvailable)
+  }
+
   useEffect(() => {
     ;(async () => {
       setNoResult(false)
       setLoading(true)
-      const getVoices = window.speechSynthesis.getVoices()
       if (!id) return
 
       const wordDetail = await fetchDetailData(id, dicttype || 'shn2eng')
@@ -48,12 +61,17 @@ const SingleWord = () => {
       }
       setWordDetail(decrypted)
       setLoading(false)
+      checkIfTTSAvailable(dicttype || 'eng2shn')
     })()
   }, [pathname])
 
+  useEffect(() => {
+    window.speechSynthesis.getVoices()
+  }, [])
+
   const isExitInFavorite = (id: string) => {
     const prev_favorites = getFavoritesFromLocal()
-    const found = prev_favorites.filter((f: any) => f._id === id)
+    const found = prev_favorites.filter((f: Favourite) => f._id === id)
     return found.length > 0
   }
 
@@ -89,8 +107,11 @@ const SingleWord = () => {
               <h2 className="my-3 dark:text-gray-200 text-4xl font-bold">
                 {wordDetail?.word}{' '}
               </h2>
-              {dicttype === 'eng2shn' && (
-                <SpeakIcon speech={wordDetail?.word} lang={'eng2shn'} />
+              {ttsAvailable && (
+                <SpeakIcon
+                  speech={wordDetail?.word}
+                  lang={dicttype || 'eng2shn'}
+                />
               )}
             </div>
             <div>

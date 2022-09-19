@@ -95,7 +95,25 @@ export const setFavoritesToLocal = async (obj: Favourite) => {
 
 export const removeFavoriteFromLocal = async (id: string) => {
   const prev_favorites = await getFavoritesFromLocal()
-  const favorites = prev_favorites.filter((f: any) => f._id !== id)
+  const favorites = prev_favorites.filter((f: Favourite) => f._id !== id)
   localStorage.setItem('sd_favourites', JSON.stringify(favorites))
   return favorites
+}
+
+export const announcement = async () => {
+  if (!navigator.onLine) {
+    return
+  }
+
+  const e = await fetch(
+    `${
+      import.meta.env.VITE_APP_SHAN_DICTIONARY_API
+    }/api/collections/entries/announcement`
+  )
+  const { entries } = await e.json()
+  if (entries.length === 0) {
+    return
+  }
+
+  return entries[0]
 }

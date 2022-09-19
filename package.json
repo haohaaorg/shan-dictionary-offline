@@ -12,7 +12,7 @@
     "dev": "vite",
     "build": "tsc && vite build && node removeSlashes.js",
     "serve": "vite preview --port 3000",
-    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint": "eslint . --ext .ts,.tsx",
     "prepare": "husky install",
     "test": "jest",
     "start": "npx electron .",

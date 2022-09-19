@@ -94,11 +94,14 @@ const SearchBox = () => {
       />
       {searchValue.length === 0 && <SearchIcon />}
       {searchValue.length > 0 && (
-        <span onClick={resetSearch} className="cursor-pointer">
+        <span
+          onClick={resetSearch}
+          className="cursor-pointer absolute top-3 right-2"
+        >
           <Xicon />
         </span>
       )}
-      <ul className="md:ml-[4rem] p-0 mt-2 bg-white dark:bg-black absolute result-list">
+      <ul className="md:ml-[4rem] p-0 mt-2 bg-white dark:bg-black overflow-y-auto overflow-x-hidden no-scrollbar">
         {searchingWordList &&
           searchingWordList.map(({ _id, word }) => (
             <WordList key={_id} id={_id} dictType={dictType} word={word} />

@@ -8,6 +8,21 @@
   --dark-primary-hover: #040816;
 }
 
+@font-face {
+  font-family: 'Panglong';
+  src: local('Panglong'), url('./fonts/Panglong.ttf') format('ttf') , url('./fonts/Panglong.ttf') format('woff2'),
+        url('./fonts/Panglong.ttf') format('woff');
+}
+
+body{
+  background:#f6f7f9;
+  font-family: 'Panglong', 'Pyidaungsu';
+}
+
+body.dark{
+  background:var(--dark-primary);
+}
+
 .text-main {
   background: var(--dark-primary);
 }
@@ -42,6 +57,22 @@
 
 .dark .dictionary-type-logo path{
   fill:#ffffff !important;
+}
+
+/*
+    https://github.com/tailwindlabs/tailwindcss/discussions/2394
+    https://github.com/tailwindlabs/tailwindcss/pull/5732
+*/
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
 }
 
 @layer components {
