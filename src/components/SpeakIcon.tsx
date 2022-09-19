@@ -9,7 +9,7 @@ type Props = {
 const SpeakIcon: FC<Props> = ({ speech, lang }) => {
   return (
     <span
-      className="mt-2 group cursor-pointer"
+      className="group cursor-pointer"
       onClick={() => speakMe(speech, lang)}
     >
       <svg

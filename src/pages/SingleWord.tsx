@@ -10,12 +10,12 @@ import {
 import { decryptMe } from '../helpers/encryption'
 import { notyf } from '../helpers/notyf'
 import { WordDetail } from '../types'
-import Favorite from './Favorites'
 
 const SingleWord = () => {
   const { id, dicttype } = useParams()
   const { pathname } = useLocation()
 
+  const [ttsAvailable, setTTSAvailable] = useState<boolean>(false)
   const [noResult, setNoResult] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
   const [wordDetail, setWordDetail] = useState<WordDetail>({
@@ -25,6 +25,20 @@ const SingleWord = () => {
     pronunciation: null,
     definition: ''
   })
+
+  const checkIfTTSAvailable = (dicttype: string) => {
+    const TTSDict = [
+      'shn2eng',
+      'eng2shn',
+      'shn2shn',
+      'shn2bur',
+      'bur2shn',
+      'tha2shn',
+      'shn2pli'
+    ]
+    const isAvailable = TTSDict.includes(dicttype)
+    setTTSAvailable(isAvailable)
+  }
 
   useEffect(() => {
     ;(async () => {
@@ -48,6 +62,7 @@ const SingleWord = () => {
       }
       setWordDetail(decrypted)
       setLoading(false)
+      checkIfTTSAvailable(dicttype || 'eng2shn')
     })()
   }, [pathname])
 
@@ -89,8 +104,11 @@ const SingleWord = () => {
               <h2 className="my-3 dark:text-gray-200 text-4xl font-bold">
                 {wordDetail?.word}{' '}
               </h2>
-              {dicttype === 'eng2shn' && (
-                <SpeakIcon speech={wordDetail?.word} lang={'eng2shn'} />
+              {ttsAvailable && (
+                <SpeakIcon
+                  speech={wordDetail?.word}
+                  lang={dicttype || 'eng2shn'}
+                />
               )}
             </div>
             <div>

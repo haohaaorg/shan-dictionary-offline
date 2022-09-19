@@ -15,7 +15,7 @@ const Favorite = () => {
   }
 
   return (
-    <div className="m-4 p-4 bg-white shadow-lg rounded dark:bg-primary">
+    <>
       <h3 className="text-2xl my-4 font-bold dark:text-white">
         Favorite Words
       </h3>
@@ -65,7 +65,7 @@ const Favorite = () => {
           )}
         </ul>
       </div>
-    </div>
+    </>
   )
 }
 export default Favorite

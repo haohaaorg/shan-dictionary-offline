@@ -36,15 +36,6 @@ export const AppProvider: React.FC<Props> = (props) => {
   const [pageLoading, setPageLoading] = useState(true)
   const [dictType, setDictType] = useState('shn2eng')
 
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   const e = await fetch('https://example.com/products')
-    //   const res = await e.json()
-    //   setWords(res.entries)
-    // }
-    // fetchData()
-  }, [])
-
   return (
     <AppContext.Provider
       value={{
