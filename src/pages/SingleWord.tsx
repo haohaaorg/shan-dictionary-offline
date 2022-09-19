@@ -9,7 +9,7 @@ import {
 } from '../helpers/db'
 import { decryptMe } from '../helpers/encryption'
 import { notyf } from '../helpers/notyf'
-import { WordDetail } from '../types'
+import { Favourite, WordDetail } from '../types'
 
 const SingleWord = () => {
   const { id, dicttype } = useParams()
@@ -44,7 +44,6 @@ const SingleWord = () => {
     ;(async () => {
       setNoResult(false)
       setLoading(true)
-      const getVoices = window.speechSynthesis.getVoices()
       if (!id) return
 
       const wordDetail = await fetchDetailData(id, dicttype || 'shn2eng')
@@ -66,9 +65,13 @@ const SingleWord = () => {
     })()
   }, [pathname])
 
+  useEffect(() => {
+    window.speechSynthesis.getVoices()
+  }, [])
+
   const isExitInFavorite = (id: string) => {
     const prev_favorites = getFavoritesFromLocal()
-    const found = prev_favorites.filter((f: any) => f._id === id)
+    const found = prev_favorites.filter((f: Favourite) => f._id === id)
     return found.length > 0
   }
 

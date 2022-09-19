@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import Loading from './components/Loading'
 import { hitAPIOnPageLoading } from './helpers/setUp'
 import SingleWord from './pages/SingleWord'
-import { useLocation } from 'react-router-dom'
 import Credit from './pages/Credit'
 import Favorites from './pages/Favorites'
 import Developers from './pages/Developers'
@@ -13,7 +12,6 @@ import Layout from './default/Layout'
 import Qna from './pages/Qna'
 
 function App(): ReactElement {
-  const { pathname } = useLocation()
   const { pageLoading, setPageLoading } = useContext(AppContext)
 
   useEffect(() => {

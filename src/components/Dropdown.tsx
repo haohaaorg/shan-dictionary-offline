@@ -18,7 +18,7 @@ const Dropdown = () => {
   const { dropdownLists, dictType, setDictType } = useContext(AppContext)
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const [selected, setSelected] = useState<DropdownType | undefined>({
+  const [setSelected] = useState<DropdownType | undefined>({
     label: 'Shan to English',
     value: 'shn2eng'
   })

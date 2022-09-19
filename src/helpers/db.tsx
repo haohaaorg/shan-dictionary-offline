@@ -95,7 +95,7 @@ export const setFavoritesToLocal = async (obj: Favourite) => {
 
 export const removeFavoriteFromLocal = async (id: string) => {
   const prev_favorites = await getFavoritesFromLocal()
-  const favorites = prev_favorites.filter((f: any) => f._id !== id)
+  const favorites = prev_favorites.filter((f: Favourite) => f._id !== id)
   localStorage.setItem('sd_favourites', JSON.stringify(favorites))
   return favorites
 }
