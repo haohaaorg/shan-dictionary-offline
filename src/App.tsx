@@ -13,6 +13,11 @@ import Qna from './pages/Qna'
 
 function App(): ReactElement {
   const { pageLoading, setPageLoading } = useContext(AppContext)
+  const { language } = useContext(AppContext)
+  useEffect(() => {
+    localStorage.setItem('sd_current_language', language)
+    setPageLoading(false)
+  }, [language])
 
   useEffect(() => {
     ;(async () => {

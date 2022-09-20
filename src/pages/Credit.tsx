@@ -1,3 +1,5 @@
+import { T } from '../helpers/lang'
+
 const creditData = {
   dictionaries: [
     {
@@ -71,18 +73,15 @@ const creditData = {
 const Credit = () => {
   return (
     <>
-      <h2 className="text-xl md:text-2xl my-8 text-center font-bold text-gray-700 dark:text-white">
-        🎊 All the credit goes to these wonderful people. 🎊
-      </h2>
       <h3 className="md:text-xl my-8 text-center font-bold dark:text-white">
-        Data Credit
+        {T('data_credit')}
       </h3>
       <table className="mx-auto p-4 md:mb-8 border text-gray-700 dark:text-white mb-5  max-w-[800px]">
         <thead>
           <tr>
-            <th className="border text-left p-4">Id</th>
-            <th className="border text-left p-4">Name</th>
-            <th className="border text-left p-4">Credit</th>
+            <th className="border text-left p-4">{T('id')}</th>
+            <th className="border text-left p-4">{T('dictionary')}</th>
+            <th className="border text-left p-4">{T('credit')}</th>
           </tr>
         </thead>
         <tbody>
@@ -99,7 +98,7 @@ const Credit = () => {
       </table>
 
       <h3 className="md:text-xl my-8 text-center font-bold dark:text-white">
-        ငိၼ်းၸူမ်းၶွပ်ႈၸႂ်ယႂ်ႇၼမ်ထိုင်
+        🎊 {T('thanks')} 🎊
       </h3>
       <div className="sm:grid sm:grid-cols-12 sm:gap-4 contributor-list">
         {creditData.thanks.map((credit) => {

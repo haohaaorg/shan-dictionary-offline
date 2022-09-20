@@ -22,6 +22,10 @@ const initialState = {
   dictType: 'shn2eng',
   setDictType: (): void => {
     /* */
+  },
+  language: 'English',
+  setLanguage: (): void => {
+    /* */
   }
 }
 
@@ -33,8 +37,12 @@ type Props = {
 
 export const AppProvider: React.FC<Props> = (props) => {
   const [words, setWords] = useState<WordDetail[]>([])
-  const [pageLoading, setPageLoading] = useState(true)
+  const [pageLoading, setPageLoading] = useState(false)
   const [dictType, setDictType] = useState('shn2eng')
+  const currentLanguage =
+    localStorage.getItem('sd_current_language') || 'English'
+
+  const [language, setLanguage] = useState(currentLanguage)
 
   return (
     <AppContext.Provider
@@ -45,7 +53,9 @@ export const AppProvider: React.FC<Props> = (props) => {
         setPageLoading,
         dropdownLists: initialState.dropdownLists,
         dictType,
-        setDictType
+        setDictType,
+        language,
+        setLanguage
       }}
     >
       {props.children}

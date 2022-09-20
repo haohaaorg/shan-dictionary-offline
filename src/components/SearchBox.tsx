@@ -9,6 +9,7 @@ import { Word } from '../types'
 import { AppContext } from '../context'
 import Dropdown from '../components/Dropdown'
 import { useLocation } from 'react-router-dom'
+import { T } from '../helpers/lang'
 
 const SearchBox = () => {
   const { pathname } = useLocation()
@@ -89,7 +90,7 @@ const SearchBox = () => {
         onKeyUp={handleSearch}
         type="text"
         ref={inputRef}
-        placeholder="Search..."
+        placeholder={T('search')}
         className="pl-[5rem] disabled:cursor-not-allowed bg-white dark:bg-primary-hover dark:text-gray-200 w-full pr-8 border border-gray-300 dark:border-gray-700 rounded focus:outline-none focus:ring-blue-600"
       />
       {searchValue.length === 0 && <SearchIcon />}
@@ -107,7 +108,7 @@ const SearchBox = () => {
             <WordList key={_id} id={_id} dictType={dictType} word={word} />
           ))}
       </ul>
-      {loading && <Loading message="တိုၵ်ႉႁႃႇယူႇၶႃႈ 💪" />}
+      {loading && <Loading message={T('searching')} />}
       {noResult && <Noresult searchValue={searchValue} />}
     </div>
   )

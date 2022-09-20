@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
+import { T } from './lang'
 import { notyf } from './notyf'
 
 export const hitAPIOnPageLoading = async (
@@ -24,6 +25,6 @@ export const hitAPIOnPageLoading = async (
 
     setPageLoading(false)
   } catch {
-    notyf.error('app ၼႆႉတိုၵ်ႉမီးပၼ်ႁႃဝႆႉၶႃႈ')
+    notyf.error(T('app_error'))
   }
 }

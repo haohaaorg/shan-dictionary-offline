@@ -1,3 +1,5 @@
+import { T } from '../helpers/lang'
+
 const contributors = [
   {
     name: 'ၸၢႆးသႅၼ်ၾႃႉ (ႁွင်ႉ) ၸၢႆးတူး',
@@ -47,7 +49,7 @@ const Developers = () => {
   return (
     <>
       <h3 className="md:text-xl my-8 text-center font-bold dark:text-white">
-        Developers / Contributors
+        {T('developers_and_contributors')}
       </h3>
       <div className="md:mb-8 sm:grid sm:grid-cols-12 sm:gap-4 contributor-list">
         {contributors.map((credit) => {

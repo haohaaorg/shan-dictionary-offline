@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../context'
+import { T } from '../helpers/lang'
 import { notyf } from '../helpers/notyf'
 import Bur2shn from './logos/Bur2shn'
 import Eng2shn from './logos/Eng2shn'
@@ -18,7 +19,7 @@ const Dropdown = () => {
   const { dropdownLists, dictType, setDictType } = useContext(AppContext)
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const [setSelected] = useState<DropdownType | undefined>({
+  const [, setSelected] = useState<DropdownType | undefined>({
     label: 'Shan to English',
     value: 'shn2eng'
   })
@@ -41,7 +42,7 @@ const Dropdown = () => {
     setDictType(selectedValue)
     setOptions(theRestOptions)
     localStorage.setItem('sd_dict_type_lang', selectedValue)
-    notyf.success('Switched to ' + selectedOption?.label)
+    notyf.success(T('switched_to') + selectedOption?.label)
 
     setShowDropdown(false)
   }

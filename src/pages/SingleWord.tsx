@@ -8,6 +8,7 @@ import {
   setFavoritesToLocal
 } from '../helpers/db'
 import { decryptMe } from '../helpers/encryption'
+import { T } from '../helpers/lang'
 import { notyf } from '../helpers/notyf'
 import { Favourite, WordDetail } from '../types'
 
@@ -79,7 +80,7 @@ const SingleWord = () => {
     if (!pathname) return
 
     if (isExitInFavorite(wordDetail?._id)) {
-      notyf.error('Already added to favorites.')
+      notyf.error(T('already_added_to_favorites'))
       return
     }
 
@@ -87,18 +88,18 @@ const SingleWord = () => {
     const link = pathname
     const word = wordDetail?.word
     setFavoritesToLocal({ _id, link, word })
-    notyf.success('Added to favorites.')
+    notyf.success(T('added_to_favorite'))
   }
 
   return (
     <>
       {noResult && (
         <p className="mx-4 bg-red-200 p-2 rounded shadow">
-          🥺 တူဝ်ၼႆႉႁႃဢမ်ႇႁၼ်ၶႃႈ ... ဢၢပ်ႈၽိတ်းဝႆႉၶႃႈ
+          {T('no_result_and_error')}
         </p>
       )}
 
-      {loading && !noResult && <Loading message="တိုၵ်ႉႁႃႇယူႇၶႃႈ 💪" />}
+      {loading && !noResult && <Loading message={T('searching')} />}
 
       {!noResult && !loading && (
         <div className="word-details bg-white dark:bg-primary p-4 rounded shadow mx-4 dark:bg-black">

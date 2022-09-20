@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getFavoritesFromLocal, removeFavoriteFromLocal } from '../helpers/db'
+import { T } from '../helpers/lang'
 import { notyf } from '../helpers/notyf'
 import { Favourite } from '../types'
 
@@ -11,13 +12,13 @@ const Favorite = () => {
     const favorites = await removeFavoriteFromLocal(id)
     console.log(favorites)
     setFavorites(favorites)
-    notyf.success('Successfully removed from favorites')
+    notyf.success(T('removed_from_favorites'))
   }
 
   return (
     <>
       <h3 className="text-2xl my-4 font-bold dark:text-white">
-        Favorite Words
+        {T('favorite_words')}
       </h3>
       <div className="favorites max-w-[500px]">
         <ul className="flex flex-col">
@@ -59,7 +60,7 @@ const Favorite = () => {
             })}
 
           {favorites.length == 0 ? (
-            <div className="dark:text-gray-300">No Favorite Words Yet.</div>
+            <div className="dark:text-gray-300">{T('no_favorite_word')}</div>
           ) : (
             ''
           )}

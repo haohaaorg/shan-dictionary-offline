@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { announcement } from '../helpers/db'
 import Xicon from '../components/Xicon'
 import Modal from '../components/Modal'
+import { T } from '../helpers/lang'
 
 type Props = {
   children?: React.ReactNode
@@ -27,7 +28,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     ;(async () => {
-      const notShowing = localStorage.getItem('not-showing')
+      const notShowing = localStorage.getItem('sd_not_showing')
       if (notShowing === 'true') {
         return
       }
@@ -38,7 +39,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   }, [])
 
   const dontShowAgain = () => {
-    localStorage.setItem('not-showing', 'true')
+    localStorage.setItem('sd_not_showing', 'true')
   }
 
   const homePageClasses =
@@ -47,9 +48,8 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <div>
-      <Navbar />
-      {message?.status === 'enable' && showMessage && (
-        <div className="fixed mt-[10vh] z-40 top-0 left-0 w-full">
+      {message?.status === 'enable' && showMessage && homePage && (
+        <div className="fixed mt-[10vh] z-30 top-0 left-0 w-full">
           <div className="w-[80%] bg-white dark:bg-black dark:text-white p-4 shadow mx-auto text-center flex gap-2 justify-between">
             <div dangerouslySetInnerHTML={{ __html: message?.message }}></div>
             <button onClick={() => setShowModal(true)}>
@@ -58,12 +58,13 @@ const Layout: React.FC<Props> = ({ children }) => {
           </div>
         </div>
       )}
+      <Navbar />
       <div className={homePage ? homePageClasses : otherPageClasses}>
         {children}
       </div>
       {!homePage ? <Footer /> : ''}
       <Modal
-        title="Want to close the message?"
+        title={T('confirm_to_close_announcement')}
         open={showModal}
         handleClose={() => setShowModal(false)}
         showCloseIcon={false}
@@ -77,7 +78,7 @@ const Layout: React.FC<Props> = ({ children }) => {
               dontShowAgain()
             }}
           >
-            Don't show this message again
+            {T('dont_show_again')}
           </button>
           <button
             className="bg-blue-100 px-4 py-1 rounded-2xl hover:bg-blue-200 dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white"
@@ -86,7 +87,7 @@ const Layout: React.FC<Props> = ({ children }) => {
               setShowMessage(false)
             }}
           >
-            Ok
+            ok
           </button>
         </div>
       </Modal>

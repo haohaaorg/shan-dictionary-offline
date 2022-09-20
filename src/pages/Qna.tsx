@@ -1,4 +1,5 @@
 import React from 'react'
+import { T } from '../helpers/lang'
 const qna = [
   {
     question:
@@ -33,18 +34,18 @@ const qna = [
   {
     question: 'ပေႃးၶႂ်ႈၸွႆႈထႅမ်ငိုၼ်းၵွင်ၵၢင်ၼႆတေလႆႈႁဵတ်းႁိုဝ်?',
     answer:
-      'တေၸွႆႈထႅမ်ငိုၼ်းလႆႈ တီႈ <a href="https://www.haohaa.com/donate" target="_blank">https://www.haohaa.com/donate</a> ၼႆႉၶႃႈ၊ တႃႇႁပ်ႉငိုၼ်း လူႇၶၢမ်ႇ တီႈမိူင်း USA တေမီး ပီႈၸွမ်တႆး တေႁပ်ႉဝႆႉပၼ်၊ မိူင်းထႆးသမ်ႉ ၼေႃႇသႅင်ၾႃႉ (ႁွင်ႉ) ၼူဝ်းၼူဝ်း တေႁပ်ႉဝႆႉပၼ်၊ မိူင်းမၢၼ်ႈတႄႉ တေပဵၼ် ၸၢႆးဢုမ်ႈၶိူဝ်း လႄႈ ၸၢႆးတူးၶႃႈ။'
+      'တေၸွႆႈထႅမ်ငိုၼ်းလႆႈ တီႈ <a href="https://www.haohaa.com/donate" class="hover:text-blue-600" target="_blank">https://www.haohaa.com/donate</a> ၼႆႉၶႃႈ၊ တႃႇႁပ်ႉငိုၼ်း လူႇၶၢမ်ႇ တီႈမိူင်း USA တေမီး ပီႈၸွမ်တႆး တေႁပ်ႉဝႆႉပၼ်၊ မိူင်းထႆးသမ်ႉ ၼေႃႇသႅင်ၾႃႉ (ႁွင်ႉ) ၼူဝ်းၼူဝ်း တေႁပ်ႉဝႆႉပၼ်၊ မိူင်းမၢၼ်ႈတႄႉ တေပဵၼ် ၸၢႆးဢုမ်ႈၶိူဝ်း လႄႈ ၸၢႆးတူးၶႃႈ။'
   },
   {
-    question: 'ၼႂ်း ပပ်ႉသပ်း- တေမီး Features သင်လၢႆလၢႆ?',
+    question: 'ၼႂ်းပပ်ႉသပ်းၼႆႉတေမီး Features သင်လၢႆလၢႆ?',
     answer:
-      'Shan to English, English to Shan, Shan to Shan, Shan to Burmese, Burmese to Shan, Pali to Shan and Thai to Shan \n Cross platforms ( Window, Linux, Mac, Android, IOS, Browser extensions, Messaging Bots )\n Accessible both online and offline.\n Text to speech for words (English, Thai, Burmese)\n Synonyms and Antonyms (English)'
+      '- Shan to English, English to Shan, Shan to Shan, Shan to Burmese, Burmese to Shan, Pali to Shan and Thai to Shan \n - Cross platforms ( Window, Linux, Mac, Android, IOS, Browser extensions, Messaging Bots )\n - Accessible both online and offline.\n - Text to speech for words (Shan,English, Thai, Burmese)\n - Synonyms and Antonyms (English)'
   },
   {
     question:
       'သင်ဝႃႈမီးၼမ်ႉၸႂ် ၶႂ်ႈၸွႆးထႅမ် ၸုမ်း ႁဝ်းႁႃး ၼႆ ၵပ်းသိုပ်ႇမႃး တီႈ?',
     answer:
-      'Email: hello@haohaa.com \n website: https://fb.com/official.haohaa \n Shandictionary FB Page'
+      'Email: hello@haohaa.com \n website: <a class="hover:text-blue-600" href="https://shandictionary.com">Shan Dictionary</a> \n Facebook : <a class="hover:text-blue-600" href="https://fb.com/official.haohaa">Haohaa</a> \n Facebook: <a class="hover:text-blue-600" href="https://fb.com/shandictionary" target="_blank">Shan Dictionary</a>'
   },
   {
     question: 'တေႁဵတ်း release သေ ပိုၼ်ၶၢဝ်ႇမၼ်းမိူဝ်ႈလႂ်?',
@@ -61,8 +62,8 @@ const Qna = () => {
   }
   return (
     <>
-      <h3 className="md:text-xl my-8 text-center font-bold dark:text-white">
-        Q&A
+      <h3 className="text-xl md:text-2xl my-8 text-center font-bold dark:text-white">
+        {T('questions_and_answers')}
       </h3>
 
       <div className="qna-wrap whitespace-pre-line">

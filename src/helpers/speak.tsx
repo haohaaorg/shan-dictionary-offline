@@ -1,3 +1,4 @@
+import { T } from './lang'
 import { notyf } from './notyf'
 
 // speak function
@@ -20,7 +21,7 @@ export const shanTTSSpeak = async (msg: string) => {
     const audio = new Audio(`data:audio/wav;base64,${data}`)
     audio.play()
   } catch (err) {
-    notyf.error('သဵင်ဢွၵ်ႇမၼ်းတိုၵ်ႉမီးပၼ်ႁႃဝႆ့ၶႃႈ')
+    notyf.error(T('tts_has_error'))
   }
 }
 
@@ -60,20 +61,21 @@ const fetchSoundOfText = async (text: string, voice: string) => {
     const audio = new Audio(url)
     audio.play()
   } catch (err) {
-    notyf.error('သဵင်ဢွၵ်ႇမၼ်းတိုၵ်ႉမီးပၼ်ႁႃဝႆ့ၶႃႈ')
+    notyf.error(T('tts_has_error'))
   }
 }
 
 export const speakMe = (speech: string, lang: string) => {
-  if (!navigator.onLine) {
-    notyf.error('ပေႃးၵွင်ႉ internet ဝႆႉၸင်ႇတေထွမ်ႇသဵင်မၼ်းၶႃႈ')
-    return
-  }
-
   if (lang === 'eng2shn') {
     browserSpeak(speech, 'Google US English')
     return
   }
+
+  if (!navigator.onLine) {
+    notyf.error(T('need_internet_connection'))
+    return
+  }
+
   if (lang === 'tha2shn') {
     fetchSoundOfText(speech, 'th-TH')
     return

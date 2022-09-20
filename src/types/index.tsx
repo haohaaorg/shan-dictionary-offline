@@ -26,6 +26,8 @@ interface initialStateType {
   dropdownLists: DropdownOption[]
   dictType: string
   setDictType: Dispatch<SetStateAction<string>>
+  language: string
+  setLanguage: Dispatch<SetStateAction<string>>
 }
 
 interface Favourite {

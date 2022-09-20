@@ -1,40 +1,38 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { T } from '../helpers/lang'
+import LanguageDropdown from './LanguageDropdown'
 import Logo from './Logo'
 import SecondNav from './SecondNav'
 
 const Navbar = () => {
-  const { pathname } = useLocation()
-  const [darkMode, setDarkMode] = useState(false)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
-
   const menus = [
     {
-      label: 'Home',
+      label: T('home'),
       to: '/',
       component: 'Link',
       newTab: false
     },
     {
-      label: 'Credit',
+      label: T('data'),
       to: '/credit',
       component: 'Link',
       newTab: false
     },
     {
-      label: 'Developers',
+      label: T('developers'),
       to: '/developers',
       component: 'Link',
       newTab: false
     },
     {
-      label: 'Q&A',
+      label: T('qna'),
       to: '/qna',
       component: 'Link',
       newTab: false
     },
     {
-      label: 'Favorites',
+      label: T('favorites'),
       to: '/favorites',
       component: 'Link',
       newTab: false
@@ -52,6 +50,10 @@ const Navbar = () => {
     //   newTab: true
     // }
   ]
+
+  const { pathname } = useLocation()
+  const [darkMode, setDarkMode] = useState(false)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   const changeDarkMode = () => {
     const dm = !darkMode
@@ -74,7 +76,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`nav-wrap fixed w-screen z-20 top-0 left-0 dark:bg-primary ${
+        className={`nav-wrap fixed w-screen z-30 top-0 left-0 dark:bg-primary ${
           pathname !== '/' ? 'h-[18vh]' : 'h-[10vh]'
         }`}
       >
@@ -107,6 +109,9 @@ const Navbar = () => {
                 </li>
               )
             })}
+            <li className="md:inline-block">
+              <LanguageDropdown />
+            </li>
             <li className="md:inline-block">
               {!darkMode && (
                 <span
@@ -231,6 +236,9 @@ const Navbar = () => {
               </li>
             )
           })}
+          <li className="border-b p-2">
+            <LanguageDropdown position="left" />
+          </li>
           <li className="pb-4">
             {!darkMode && (
               <span
