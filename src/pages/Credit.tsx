@@ -9,7 +9,7 @@ const creditData = {
     {
       dictionary: 'English to Shan Dictionary',
       credit:
-        'ၸဝ်ႈၶူး Dr. ပၺ်ၺႃသီရိ သၢႆပွၼ်, Meet Developer (English Dictionary)'
+        'ၸဝ်ႈၶူး Dr. ပၺ်ၺႃသီရိ သၢႆပွၼ် | Meet Developer (English Dictionary)'
     },
     {
       dictionary: 'ဢၽိꩪၢၼ်ႇ ပႃႇလိ - တႆး',

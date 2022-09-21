@@ -43,7 +43,7 @@ const SearchBox = () => {
 
     const timeout = setTimeout(() => {
       triggerSearch()
-    }, 400) //2000 - timeout to execute this function if timeout will be not cleared
+    }, 200) //2000 - timeout to execute this function if timeout will be not cleared
 
     return () => clearTimeout(timeout) //clear timeout (delete function execution)
   }, [searchValue])
@@ -61,6 +61,11 @@ const SearchBox = () => {
     setLoading(value !== '')
     setNoResult(false)
     setSearchingWordList([])
+
+    if (e.key === 'Enter') {
+      triggerSearch()
+      return
+    }
     setSearchValue(value)
   }
 
@@ -71,7 +76,7 @@ const SearchBox = () => {
       return
     }
 
-    const filtered = await fullTextSearch(searchValue, dictType)
+    const filtered = await fullTextSearch(searchValue.toLowerCase(), dictType)
     if (filtered.length == 0) {
       afterSearchAndNotFound()
       return
