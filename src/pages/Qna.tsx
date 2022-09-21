@@ -5,11 +5,11 @@ const qna = [
     question:
       'ၸုမ်း Hao Haa (ႁဝ်းႁႃး) ၼႆႉပဵၼ်ၽႂ်လၢႆလၢႆ၊ ယိူင်းဢၢၼ်းမီးၸိူင်ႉႁိုဝ်?',
     answer:
-      'ၸုမ်း Hao Haa (ႁဝ်းႁႃး) ၼႆႉလုၵ်ႉတီႈ ၵူၼ်းၼုမ်ႇတႆးႁဝ်းၶႃႈ ဢၼ်ႁၵ်ႉၽႃႇသႃႇလိၵ်ႈလၢႆးတႆး လႄႈ IT တႆးသေ လႆႈၵေႃႇတင်ႈပဵၼ်မႃးၶႃႈ \n\n ယိူင်းဢၢၼ်း \n တႃႇၵူၼ်းၼုမ်ႇႁဝ်းလႅၵ်ႈလၢႆႈ ၸႅၵ်ႇၽေတၢင်းႁူႉၵၼ်\n တႃႇၽႃႇသႃႇလိၵ်ႈလၢႆးၵႂၢမ်းလၢတ်းတႆးလႄႈ IT တႆးႁဝ်းၶိုၼ်ႈယႂ်ႇလႄႈ\n တႃႇႁူႉၸၵ်းမိုတ်ႈၵိုဝ်းၸၢမ်ၸႂ်ၵၼ်'
+      'ၸုမ်း Hao Haa (ႁဝ်းႁႃး) ၼႆႉလုၵ်ႉတီႈ ၵူၼ်းၼုမ်ႇတႆးႁဝ်းၶႃႈ ဢၼ်ႁၵ်ႉၽႃႇသႃႇလိၵ်ႈလၢႆးတႆး လႄႈ IT တႆးသေ လႆႈၵေႃႇတင်ႈပဵၼ်မႃးၶႃႈ \n\n ယိူင်းဢၢၼ်း \n - တႃႇၵူၼ်းၼုမ်ႇႁဝ်းလႅၵ်ႈလၢႆႈ ၸႅၵ်ႇၽေတၢင်းႁူႉၵၼ်\n - တႃႇၽႃႇသႃႇလိၵ်ႈလၢႆးၵႂၢမ်းလၢတ်ႈတႆးလႄႈ IT တႆးႁဝ်းၶိုၼ်ႈယႂ်ႇ\n - တႃႇႁူႉၸၵ်းမိုတ်ႈၵိုဝ်းၸမ်ၸႂ်ၵၼ်'
   },
   {
     question: 'ၸုမ်းႁဝ်းႁႃးၼႆႉ တေႇမႃး မိူဝ်ႈလႂ်?',
-    answer: 'တႄႇမႃး 10/2021 (ႁင်ပီ 2021)ၶႃႈ'
+    answer: 'တႄႇမႃး (10/2021) ၶႃႈ'
   },
   {
     question: 'ႁဵတ်းၸိူင်ႉႁိူဝ် လႆႈၺႃးၵၼ်?',
@@ -19,12 +19,12 @@ const qna = [
   {
     question: 'လွင်ႈပဵၼ်မႃး Shan Dictionary?',
     answer:
-      'လွင်းတင်းမၼ်းတႄႉ မိူဝ်ႈပူၼ်ႉမႃး သွင်၊သၢမ် ပီၼႆႉ ပပ်ႉသပ်း တႆးႁဝ်းၶႃႈ ဢၼ်ၸူႉႁွမ်တွမ်တီႈလဵဝ်ၵၼ်သေ ႁႂ်ႈၸႂ်ႉလႆႈ ၶိုၵ်ႉၶိုၵ်ႉလီၼၼ်ႉ (တူဝ်ယၢင်ႇ -  Cross platform app ) ၸိူဝ်းၼႆႉ ပႆႇယၢမ်ႈမီးမႃးၼႆၶႃႈလႄႈ Developers တႆး ႁဝ်းၶႃႈၵေႃႈ ဢွၼ်ၵၼ်ၽွမ်ႉၵၼ်သေ ၶတ်းၸႂ်ၶူင်သၢင်ႈႁဵတ်းဢွၵ်ႇမႃး ၶႃႈဢေႃႈ။'
+      'လွင်းတၢင်းမၼ်းတႄႉ မိူဝ်ႈပူၼ်ႉမႃး သွင်၊ သၢမ် ပီၼႆႉ ပပ်ႉသပ်း တႆးႁဝ်းၶႃႈ ဢၼ်ၸူႉႁွမ်တွမ်တီႈလဵဝ်ၵၼ်သေ ႁႂ်ႈၸႂ်ႉလႆႈ ၶိုၵ်ႉၶိုၵ်ႉလီၼၼ်ႉ (တူဝ်ယၢင်ႇ -  Cross platform app ) ၸိူဝ်းၼႆႉ ပႆႇယၢမ်ႈမီးမႃးၼႆၶႃႈလႄႈ Developers တႆး ႁဝ်းၶႃႈၵေႃႈ ဢွၼ်ၵၼ်ၽွမ်ႉၵၼ်သေ ၶတ်းၸႂ်ၶူင်သၢင်ႈႁဵတ်းဢွၵ်ႇမႃး ၶႃႈဢေႃႈ။'
   },
   {
     question: 'ပပ်ႉသပ်း Shan Dictionary ၼႆႉမီးၽွၼ်းလီသင်?',
     answer:
-      'တႃႇၽႃႇသႃႇလိၵ်ႈလၢႆးႁဝ်းၶႃႈ ၶိုၼ်ႈယႂ်ႇမႃး\n တႃႇပဵၼ် ဢၼ် ၶွင် ၵမ်ႉထႅမ်ပၼ် ၵၢၼ်ႁဵၼ်း\n တႃႇ ႁဵတ်းႁႂ်ႈ တင်းႁူႉႁဝ်းၶႃႈ ၵႂင်ႈၶႂၢင်တိူဝ်းၼမ် မႃး'
+      ' - တႃႇၽႃႇသႃႇလိၵ်ႈလၢႆးႁဝ်းၶႃႈ ၶိုၼ်ႈယႂ်ႇမႃး\n  - တႃႇပဵၼ် ဢၼ် ၶွင် ၵမ်ႉထႅမ်ပၼ် ၵၢၼ်ႁဵၼ်း\n  - တႃႇ ႁဵတ်းႁႂ်ႈ တင်းႁူႉႁဝ်းၶႃႈ ၵႂၢင်ႈၶႂၢင်တိူဝ်းၼမ် မႃး'
   },
   {
     question: 'လွင်ႈယၢပ်ႇမီးသင်လၢႆလၢႆ?',
@@ -39,17 +39,17 @@ const qna = [
   {
     question: 'ၼႂ်းပပ်ႉသပ်းၼႆႉတေမီး Features သင်လၢႆလၢႆ?',
     answer:
-      '- Shan to English, English to Shan, Shan to Shan, Shan to Burmese, Burmese to Shan, Pali to Shan and Thai to Shan \n - Cross platforms ( Window, Linux, Mac, Android, IOS, Browser extensions, Messaging Bots )\n - Accessible both online and offline.\n - Text to speech for words (Shan,English, Thai, Burmese)\n - Synonyms and Antonyms (English)'
+      '- Shan to English, English to Shan, Shan to Shan, Shan to Burmese, Burmese to Shan, Pali to Shan and Thai to Shan \n - Cross platforms ( Window, Linux, Mac, Android, IOS, Browser extensions, Messaging Bots )\n - Accessible both online and offline.\n - Text to speech for words (Shan, English, Thai, Burmese)\n - Synonyms and Antonyms (English)'
   },
   {
     question:
       'သင်ဝႃႈမီးၼမ်ႉၸႂ် ၶႂ်ႈၸွႆးထႅမ် ၸုမ်း ႁဝ်းႁႃး ၼႆ ၵပ်းသိုပ်ႇမႃး တီႈ?',
     answer:
-      'Email: hello@haohaa.com \n website: <a class="hover:text-blue-600" href="https://shandictionary.com">Shan Dictionary</a> \n Facebook : <a class="hover:text-blue-600" href="https://fb.com/official.haohaa">Haohaa</a> \n Facebook: <a class="hover:text-blue-600" href="https://fb.com/shandictionary" target="_blank">Shan Dictionary</a>'
+      'Email: hello@haohaa.com \n Website: <a class="hover:text-blue-600" href="https://shandictionary.com">Shan Dictionary</a> \n Facebook : <a class="hover:text-blue-600" href="https://fb.com/official.haohaa">Haohaa</a> \n Facebook: <a class="hover:text-blue-600" href="https://fb.com/shandictionary" target="_blank">Shan Dictionary</a>'
   },
   {
     question: 'တေႁဵတ်း release သေ ပိုၼ်ၶၢဝ်ႇမၼ်းမိူဝ်ႈလႂ်?',
-    answer: 'v1 တေဢွၵ်ႇမႃး 24 Sept, 2022 ၼႆႉၶႃႈ'
+    answer: 'v1 တေဢွၵ်ႇမႃး 24 September, 2022 ၼႆႉၶႃႈ'
   }
 ]
 

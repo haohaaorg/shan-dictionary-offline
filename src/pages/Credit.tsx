@@ -18,7 +18,7 @@ const creditData = {
     },
     {
       dictionary: 'Shan to English Dictionary',
-      credit: 'မေႃသွၼ် မွၼ်းၶိူဝ်း -ၵဵင်းတုင်'
+      credit: 'မေႃသွၼ် မွၼ်းၶိူဝ်း -  ၵဵင်းတုင်'
     },
     {
       dictionary: 'Shan to Burmese Dictionary',
@@ -27,7 +27,7 @@ const creditData = {
     },
     {
       dictionary: 'Thai to Shan Dictionary',
-      credit: 'ၸၸုမ်းသၢင်ႇၶ ၸိုင်ႈထႆး | မူၼ်ႉ​​မေး ထတ်းၽိူမ်ႉ PJailon-SIIT'
+      credit: 'ၸုမ်းသင်ႇၶ ၸိုင်ႈထႆး | မူၼ်ႉ​​မေး ထတ်းၽိူမ်ႉ PJailon-SIIT'
     }
   ],
   thanks: [
