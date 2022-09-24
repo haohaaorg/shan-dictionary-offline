@@ -1,12 +1,9 @@
-name: Main prod
+name: Develop build test
 
 on:
-  # pull_request:
-  #   branches:
-  #     - main
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   # lint:
