@@ -9,6 +9,7 @@ import Shn2bur from './logos/Shn2bur'
 import Shn2eng from './logos/Shn2eng'
 import Shn2shn from './logos/Shn2shn'
 import Tha2shn from './logos/Tha2shn'
+import Zh2shn from './logos/Zh2shn'
 
 const Dropdown = () => {
   type DropdownType = {
@@ -72,6 +73,7 @@ const Dropdown = () => {
           {dictType === 'bur2shn' ? <Bur2shn size={32} /> : ''}
           {dictType === 'tha2shn' ? <Tha2shn size={32} /> : ''}
           {dictType === 'pli2shn' ? <Pli2shn size={32} /> : ''}
+          {dictType === 'zh2shn' ? <Zh2shn size={32} /> : ''}
 
           <svg
             className={`-mr-1 ml-2 h-5 w-5 transition-all duration-300 ${

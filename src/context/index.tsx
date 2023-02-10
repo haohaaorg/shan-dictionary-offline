@@ -16,6 +16,7 @@ const initialState = {
     { label: 'Shan - Shan', value: 'shn2shn' },
     { label: 'Shan - Burmese', value: 'shn2bur' },
     { label: 'Burmese - Shan', value: 'bur2shn' },
+    { label: 'Chinese - Shan', value: 'zh2shn' },
     { label: 'Thai - Shan', value: 'tha2shn' },
     { label: 'Pali - Shan', value: 'pli2shn' }
   ],

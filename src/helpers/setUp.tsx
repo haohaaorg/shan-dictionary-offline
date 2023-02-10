@@ -14,6 +14,7 @@ export const hitAPIOnPageLoading = async (
     await fetch(import.meta.env.VITE_APP_BUR_TO_SHN_API)
     await fetch(import.meta.env.VITE_APP_THA_TO_SHN_API)
     await fetch(import.meta.env.VITE_APP_PLI_TO_SHN_API)
+    await fetch(import.meta.env.VITE_APP_ZH_TO_SHN_API)
 
     await fetch(import.meta.env.VITE_APP_ENG_TO_SHN_WORDS_API)
     await fetch(import.meta.env.VITE_APP_SHN_TO_ENG_WORDS_API)
@@ -22,6 +23,7 @@ export const hitAPIOnPageLoading = async (
     await fetch(import.meta.env.VITE_APP_BUR_TO_SHN_WORDS_API)
     await fetch(import.meta.env.VITE_APP_THA_TO_SHN_WORDS_API)
     await fetch(import.meta.env.VITE_APP_PLI_TO_SHN_WORDS_API)
+    await fetch(import.meta.env.VITE_APP_ZH_TO_SHN_WORDS_API)
 
     setPageLoading(false)
   } catch {

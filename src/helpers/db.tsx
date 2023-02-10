@@ -16,6 +16,8 @@ const GetAPIURL = (dictType: string): string => {
       return import.meta.env.VITE_APP_THA_TO_SHN_API
     case 'pli2shn':
       return import.meta.env.VITE_APP_PLI_TO_SHN_API
+    case 'zh2shn':
+      return import.meta.env.VITE_APP_ZH_TO_SHN_API
     default:
       return import.meta.env.VITE_APP_SHN_TO_ENG_API
   }
@@ -37,6 +39,8 @@ const getWordAPIURL = (dictType: string): string => {
       return import.meta.env.VITE_APP_THA_TO_SHN_WORDS_API
     case 'pli2shn':
       return import.meta.env.VITE_APP_PLI_TO_SHN_WORDS_API
+    case 'zh2shn':
+      return import.meta.env.VITE_APP_ZH_TO_SHN_WORDS_API
     default:
       return import.meta.env.VITE_APP_SHN_TO_ENG_WORDS_API
   }
